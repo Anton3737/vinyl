@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="records : ${recordspage}">
+
+    <a th:href="@{/recordspage/{id}(id=${records.getId()})}"
+       th:text="${records.getName() + ', ' +
+       records.getAge() + ', ' + records.getDatarecording() + ', ' + records.getDatareliase() + ', ' + records.getPublhouse() + ', ' +
+       records.getCountry() + ', ' + records.getGenry() + ', ' + records.getNumberoftracks() + ', ' + records.getNumberofdisk() + ', ' + records.getConditions()}">
+        record</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href=" recordspage/new">Create new record</a>
+
+</body>
+</html>

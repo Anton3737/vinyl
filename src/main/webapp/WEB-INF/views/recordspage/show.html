@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Record</title>
+</head>
+<body>
+
+<p th:text="${'id: ' + record.getId()}">VALUE</p>
+<p th:text="${'Artist: ' + record.getArtist()}">VALUE</p>
+<p th:text="${'Album: ' + record.getAlbum()}">VALUE</p>
+<p th:text="${'Recording Date: ' + record.getDatarecording()}">VALUE</p>
+<p th:text="${'Release Date: ' + record.getDatareliase()}">VALUE</p>
+<p th:text="${'Email: ' + record.getPublhouse()}">VALUE</p>
+<p th:text="${'Country: ' + record.getCountry()}">VALUE</p>
+<p th:text="${'Genre: ' + record.getGenry()}">VALUE</p>
+<p th:text="${'Number of Tracks: ' + record.getNumberoftracks()}">VALUE</p>
+<p th:text="${'Number of Disks: ' + record.getNumberofdisk()}">VALUE</p>
+<p th:text="${'Conditions: ' + record.getConditions()}">VALUE</p>
+
+<a th:href="@{/records/{id}/edit(id=${record.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/records/{id}(id=${record.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

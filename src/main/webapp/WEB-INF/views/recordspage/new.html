@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Record</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/recordspage}" th:object="${records}">
+    <label for="artist">Enter artist: </label>
+    <input type="text" th:field="*{artist}" id="artist"/>
+    <div style="color:red" th:if="${#fields.hasErrors('artist')}" th:errors="*{artist}">Artist Error</div>
+    <br/>
+    <label for="album">Enter album: </label>
+    <input type="text" th:field="*{album}" id="album"/>
+    <div style="color:red" th:if="${#fields.hasErrors('album')}" th:errors="*{album}">Album Error</div>
+    <br/>
+    <label for="datarecording">Enter recording date: </label>
+    <input type="text" th:field="*{datarecording}" id="datarecording"/>
+    <div style="color:red" th:if="${#fields.hasErrors('datarecording')}" th:errors="*{datarecording}">Recording Date Error</div>
+    <br/>
+    <label for="datareliase">Enter release date: </label>
+    <input type="text" th:field="*{datareliase}" id="datareliase"/>
+    <div style="color:red" th:if="${#fields.hasErrors('datareliase')}" th:errors="*{datareliase}">Release Date Error</div>
+    <br/>
+    <label for="publhouse">Enter publishing house: </label>
+    <input type="text" th:field="*{publhouse}" id="publhouse"/>
+    <div style="color:red" th:if="${#fields.hasErrors('publhouse')}" th:errors="*{publhouse}">Publishing House Error</div>
+    <br/>
+    <label for="country">Enter country: </label>
+    <input type="text" th:field="*{country}" id="country"/>
+    <div style="color:red" th:if="${#fields.hasErrors('country')}" th:errors="*{country}">Country Error</div>
+    <br/>
+    <label for="genry">Enter genre: </label>
+    <input type="text" th:field="*{genry}" id="genry"/>
+    <div style="color:red" th:if="${#fields.hasErrors('genry')}" th:errors="*{genry}">Genre Error</div>
+    <br/>
+    <label for="numberoftracks">Enter number of tracks: </label>
+    <input type="text" th:field="*{numberoftracks}" id="numberoftracks"/>
+    <div style="color:red" th:if="${#fields.hasErrors('numberoftracks')}" th:errors="*{numberoftracks}">Number of Tracks Error</div>
+    <br/>
+    <label for="numberofdisk">Enter number of disks: </label>
+    <input type="text" th:field="*{numberofdisk}" id="numberofdisk"/>
+    <div style="color:red" th:if="${#fields.hasErrors('numberofdisk')}" th:errors="*{numberofdisk}">Number of Disks Error</div>
+    <br/>
+    <label for="conditions">Enter conditions: </label>
+    <input type="text" th:field="*{conditions}" id="conditions"/>
+    <div style="color:red" th:if="${#fields.hasErrors('conditions')}" th:errors="*{conditions}">Conditions Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>
